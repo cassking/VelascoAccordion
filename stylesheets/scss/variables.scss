@@ -1,0 +1,48 @@
+
+  // Global Defaults
+/* Twitter bootstrap uses these */
+$mobile-landscape-container-width: 		30em;//480px /*mobile landscape*/
+$tablet-container-width:              48em;//768px /* Small devices (tablets, 768px and up) */
+$desktop-container-width:             62em;//992px /* Medium devices (desktops, 992px and up) */
+$large-container-width:               75em;//1200px /* Large devices (large desktops, 1200px and up) */
+
+//Color 
+
+$white: #fff;
+$black: #000;
+$grey: #E5E5E5;
+$greylight: #D7D2CB;
+$greymedium: #9E9E9E;
+$greydark: #7D7D7D;
+$bluelight: #80B7E8;
+$bluemedium: #4E98DE;
+$bluedark: #2169B0;
+$bluedeep: #032D57;
+$yellow: #F6B618;
+$orange: #FF7A00;
+$redish: #E52E26;
+$jade: #039776;
+$lime: #B1CA2A;
+
+
+//Font  
+
+$fontawesome: "FontAwesome";
+$museoslab: "museo_slab500";
+$quicksand: "quicksandregular";
+$sourcesanspro: "source_sans_proregular";
+
+
+//Document 
+
+$base-border: 4px solid $black;
+$base-border-radius: 5px;
+$small-border-radius: 10px;
+$medium-border-radius: 20px;
+$large-border-radius: 60px;
+$button-border-radius: 18px;
+$circle-small:15px;
+$circle-medium:40px;
+$circle-large:60px;
+//$featured-width: 922px;
+//$featured-height: 324px;
