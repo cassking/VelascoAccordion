@@ -584,11 +584,9 @@ aside {
 }
 header[role="banner"] {
   position: relative;
-  margin: 0 auto;
-  text-align: center;
+  margin: 0 1em;
 }
 #header-container {
-
   margin: 0 auto;
   @include clearfix;
 }
@@ -612,29 +610,23 @@ div[role="main"] {
   padding-right: 10px;
   @include clearfix;
 }
-/*testing to see if pseudo: will fix page jump on :target*/
-#one:before {
-    display: block;
-    content: " ";
-    height: 250px;
-    margin: -250px 0 0;
-    visibility: hidden;
-  } 
+ 
 /*method 2 trying using hover(to remove page jump on :target) instead and helping touch devices */
 .touch .mobile-link {display:block;}
 .no-touch .mobile-link {display:none}
 
 .main {
   margin: 0 auto;
- width: auto;
+  width: auto;
   @include clearfix;
   .row {
     .accordion {
+      position: relative;
       background: $bluedeep;
       border: 5px solid $bluedeep;
       border-radius: 25px 0 25px 0;
       margin: 0;
-        max-height: 500px;
+      max-height: 500px;
      /* min-width: 46.875em;*/
       min-width: 46.875em;
       &.horizontal {
@@ -649,20 +641,41 @@ div[role="main"] {
         position: relative;
         float: left;
         overflow: hidden;
-        height: 500px;
+       /* height: 500px;*/
+        height: 648px;
         width: 2.813em; /* 45px (originally 45px) / 750px */
         min-width: 2.813em;
         margin: 0;
         padding:0;
-        cursor: pointer;
-        background: $white;
+/*       cursor: pointer;
+*/      background: $white;
         color: $bluedeep;
         @include transition(all, ease, 0.5s, 0.1s);
+        .button {
+          display: none;
+             a, a:active, a:focus {
+              display: none;
+              cursor: pointer;
+              color: red;
+              font-size: 2em;
+              text-decoration: none;
+              @include transition(all, ease, 0.5s, 0s);
+              &:focus {
+                color:blue;
+            }
+          }
+
+        }
         h2 {
           text-align: left;
           white-space: nowrap;
           margin: 5px .313em 0 0; /* .313em / 5px*/
+          cursor: pointer;
           @include rotate(90deg);
+          &:hover,
+          &:focus {             
+            text-shadow:-1px -1px 0 $white, 1px -1px 0 $white, -1px 1px 0 $white, 1px 1px 0 $white;
+          }
           a {
             color: $bluedeep;
             text-transform: lowercase; 
@@ -671,7 +684,8 @@ div[role="main"] {
           }
         }
         &:hover,
-        &:focus {}
+        &:focus {             
+        }
         p, q, blockquote {
           position: relative;
           font-size: 1.3em;
@@ -695,7 +709,7 @@ div[role="main"] {
         }
         /*numbers in circles*/
         &:after {
-          content:" ";
+          content:"1";
           text-align: center;
           line-height:1.5;
           display: block;
@@ -736,6 +750,7 @@ div[role="main"] {
         }
         &:nth-child(1):after {
           content:"1";
+           overflow:visible !important;
         }
         &:nth-child(2):after {
           content:"2";
@@ -764,20 +779,32 @@ div[role="main"] {
         &:nth-child(10):after {
           content:"10";
         }
-        &:target
-       /* &:hover*/ {
+        &:target {
           position: relative;
           background: $white;
           display: block;
-          border: 10px solid $bluedeep;
+          border-left: 4px solid $bluedeep;
+          border-right: 4px solid $bluedeep;
           z-index:100;
           width: 25em;
+          @include clearfix;
           @include transition(all, ease, 0.5s, 0.1s);
+          .button {
+            display: block;
+            a, a:active, a:focus{
+                display: block;
+            }
+          }
+          &:first-child {
+            border-left: none;
+          }
           h2 {
             display: block;
             position: relative;
-            font-size:3.2em;
-            margin:-5px 0 0 .625em;/* .625em /10px*/
+            font-size:2.2em;
+            text-align: center;
+            letter-spacing: -.05em;
+            margin:-5px 0 0 0;
             @include rotate(0deg);
             width: 100%;
             z-index: 200;
@@ -788,27 +815,79 @@ div[role="main"] {
             }  
           }
           p, q, blockquote {
-          opacity: 1;
-
-        }
-          &:after {
-           bottom: 2px;
+            opacity: 1;
+          }
+        
+          &:nth-child(1):after {
+            content:"1";
+          }
+           &:nth-child(2):after {
+            content:"2";
+          }
+           &:nth-child(3):after {
+            content:"3";
+          }
+           &:nth-child(4):after {
+            content:"4";
+          }
+           &:nth-child(5):after {
+            content:"5";
+          }
+           &:nth-child(6):after {
+            content:"6";
+          }
+           &:nth-child(7):after {
+            content:"7";
+          }
+           &:nth-child(8):after {
+            content:"8";
           }
             &:hover,
             &:focus {
              background: $yellow;
-              h2 {
-                a {
-                }
-              }
-              &:after {
-                }
+             
+              
             }
         }
       }
     }
   }
 }
+/*Hash Tag Page Jump Fix*/
+#one,
+#two,
+#three,
+#four,
+#five,
+#six,
+#seven,
+#eight {
+  position: relative;
+  padding: 3px;
+  border-top: 153px solid transparent;
+  margin-top: -151px;
+  -webkit-background-clip: padding-border;
+  -moz-background-clip: padding;
+  background-clip: padding-border;
+  @include transition(all, ease, 0.5s, 0s);
+
+}
+#one:before,
+#two:before,
+#three:before,
+#four:before,
+#five:before,
+#six:before,
+#seven:before,
+#eight:before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: 0;
+  right: 0;
+  /*border-top: 1px solid transparent;*/
+}
+/*End Hash Tag Page Jump Fix*/
 
 /* Fluid Grid */
 .col {
@@ -1015,6 +1094,12 @@ nter-text { text-align: center; }
 /* ========================================================================== */
 @media screen and (min-width: 30em) {
 
+  header[role="banner"] {
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+}
+
 }
 
 /* ==========================================================================
@@ -1032,7 +1117,7 @@ body {
   padding-left: 0; /*20px*/
   padding-right: 1.250em; /*20px*/
   margin: 0 auto;
-  @include transition(all, ease, 0.5s, 0.1s);
+  @include transition(all, ease, 0.5s, 0s);
     &:first-child { 
       margin-left: auto;
     }
@@ -1041,7 +1126,7 @@ body {
   min-width: 47em;
   max-width: 48em; 
   @include clearfix;
-  @include transition(all, ease, 0.5s, 0.1s);
+  @include transition(all, ease, 0.5s, 0s);
   .row {
      min-width: 47em;
      max-width: 48em; 
@@ -1127,8 +1212,6 @@ body {
   width: -moz-calc(100% / 12 * 11);
 }
 .tablet-col-12 { width: 100%; }
-
-
 /* End tablet Media Query */
 } 
 
@@ -1136,6 +1219,22 @@ body {
 /* ==========================================================================
 /*Desktop */
 /* ========================================================================== */
+@media screen and (min-width: 53em) {
+  .main {
+    .row {
+      .accordion {
+        section {
+          &:target {
+            h2 {
+              letter-spacing: 0.0015em;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 @media screen and (min-width: $tablet-container-width) {
   body {
     font-size: 90.5%;/*1em/16px*/
@@ -1152,20 +1251,23 @@ body {
     }
 }
 .main {
- border: 1px solid green;
- min-width: 50em;
+ min-width: 50.473em;
   max-width: 62em;
   @include transition(all, ease, 0.5s, 0s);
   .row {
     .accordion {
-      min-width: 50em;
+      min-width: 50.473em;
         &.horizontal {
-          min-width: 50em;
+          min-width: 50.473em;
           max-width: 62em;
         }
       section {
-        width: 4em;
-
+        width: 7.1%;
+        min-width: 3.72em;
+        &:target {
+          width: 50%;
+          max-width: 30em;
+        }
       }
     }
   }
