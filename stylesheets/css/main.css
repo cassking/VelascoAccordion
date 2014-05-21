@@ -556,7 +556,8 @@ aside {
   text-transform: uppercase;
   font-size: 1.4em;
   letter-spacing: -.08em;
-  margin-top: -15px;
+  margin-top: -19px;
+  margin-bottom: 0;
   color: #032d57; }
 
 .tooltip {
@@ -621,6 +622,26 @@ div[role="main"] {
 .no-touch .mobile-link {
   display: none; }
 
+.button, .button a, a:active, a:focus {
+  display: inline-block;
+  margin: -12px 0;
+  cursor: pointer;
+  color: #032d57;
+  text-decoration: none;
+  text-transform: uppercase;
+  -webkit-border-radius: 18px;
+  -moz-border-radius: 18px;
+  -o-border-radius: 18px;
+  -ms-border-radius: 18px;
+  border-radius: 18px;
+  -webkit-transition: all ease 0.5s 0s;
+  -moz-transition: all ease 0.5s 0s;
+  -ms-transition: all ease 0.5s 0s;
+  -o-transition: all ease 0.5s 0s;
+  transition: all ease 0.5s 0s; }
+  .button:focus, .button:hover, .button:active, .button a:focus, .button a:hover, .button a:active, a:active:focus, a:active:hover, a:active:active, a:focus:focus, a:focus:hover, a:focus:active {
+    color: #4e98de; }
+
 .main {
   margin: 0 auto;
   width: auto; }
@@ -635,7 +656,7 @@ div[role="main"] {
     border: 5px solid #032d57;
     border-radius: 25px 0 25px 0;
     margin: 0;
-    max-height: 500px;
+    /* max-height: 500px;*/
     /* min-width: 46.875em;*/
     min-width: 46.875em; }
     .main .row .accordion.horizontal {
@@ -670,7 +691,7 @@ div[role="main"] {
         .main .row .accordion section .button a, .main .row .accordion section .button a:active, .main .row .accordion section .button a:focus {
           display: none;
           cursor: pointer;
-          color: red;
+          color: #039776;
           font-size: 2em;
           text-decoration: none;
           -webkit-transition: all ease 0.5s 0s;
@@ -678,8 +699,8 @@ div[role="main"] {
           -ms-transition: all ease 0.5s 0s;
           -o-transition: all ease 0.5s 0s;
           transition: all ease 0.5s 0s; }
-          .main .row .accordion section .button a:focus, .main .row .accordion section .button a:active:focus, .main .row .accordion section .button a:focus:focus {
-            color: blue; }
+          .main .row .accordion section .button a:focus, .main .row .accordion section .button a:hover, .main .row .accordion section .button a:active, .main .row .accordion section .button a:active:focus, .main .row .accordion section .button a:active:hover, .main .row .accordion section .button a:active:active, .main .row .accordion section .button a:focus:focus, .main .row .accordion section .button a:focus:hover, .main .row .accordion section .button a:focus:active {
+            color: #032d57; }
       .main .row .accordion section h2 {
         text-align: left;
         white-space: nowrap;
@@ -778,10 +799,12 @@ div[role="main"] {
         position: relative;
         background: white;
         display: block;
+        left: 0;
+        margin-left: -4em;
         border-left: 4px solid #032d57;
         border-right: 4px solid #032d57;
         z-index: 100;
-        width: 25em;
+        width: 16em;
         -webkit-transition: all ease 0.5s 0.1s;
         -moz-transition: all ease 0.5s 0.1s;
         -ms-transition: all ease 0.5s 0.1s;
@@ -793,11 +816,32 @@ div[role="main"] {
           *zoom: 1;
           clear: both; }
         .main .row .accordion section:target .button {
-          display: block; }
+          display: block;
+          z-index: 500;
+          background: transparent;
+          text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white; }
           .main .row .accordion section:target .button a, .main .row .accordion section:target .button a:active, .main .row .accordion section:target .button a:focus {
-            display: block; }
-        .main .row .accordion section:target:first-child {
-          border-left: none; }
+            display: block;
+            padding: 0;
+            background: inherit;
+            color: #032d57; }
+        .main .row .accordion section:target:nth-child(1) {
+          border-left: none;
+          margin-left: 0; }
+        .main .row .accordion section:target:nth-child(2) {
+          margin-left: -2em; }
+        .main .row .accordion section:target:nth-child(3) {
+          margin-left: -5em; }
+        .main .row .accordion section:target:nth-child(4) {
+          margin-left: -8em; }
+        .main .row .accordion section:target:nth-child(5) {
+          margin-left: -11em; }
+        .main .row .accordion section:target:nth-child(6) {
+          margin-left: -14em; }
+        .main .row .accordion section:target:nth-child(7) {
+          margin-left: -15em; }
+        .main .row .accordion section:target:nth-child(8) {
+          margin-left: -14em; }
         .main .row .accordion section:target h2 {
           display: block;
           position: relative;
@@ -805,11 +849,18 @@ div[role="main"] {
           text-align: center;
           letter-spacing: -.05em;
           margin: -5px 0 0 0;
+          text-indent: -9999px;
+          height: 1%;
           -webkit-transform: rotate(0deg);
           -moz-transform: rotate(0deg);
           -ms-transform: rotate(0deg);
           -o-transform: rotate(0deg);
           transform: rotate(0deg);
+          -webkit-transition: all ease 0.5s 0s;
+          -moz-transition: all ease 0.5s 0s;
+          -ms-transition: all ease 0.5s 0s;
+          -o-transition: all ease 0.5s 0s;
+          transition: all ease 0.5s 0s;
           width: 100%;
           z-index: 200;
           text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white; }
@@ -954,7 +1005,7 @@ div[role="main"] {
 
 /* Rows */
 .row {
-  padding-top: 1em;
+  padding-top: 0;
   padding-bottom: 1em; }
 
 /* ==========================================================================
@@ -964,7 +1015,8 @@ footer {
   position: relative;
   margin: 20px auto;
   width: 100%;
-  min-width: 47em; }
+  float: left;
+  /*min-width: 47em;*/ }
   footer:after {
     content: "";
     display: table;
@@ -1080,13 +1132,26 @@ nter-text {
   left: -9999em; }
 
 /* ==========================================================================
-/*mobile landscape 30em;//480px  and down) */
+/*mobile landscape 30em;//480px 
 /* ========================================================================== */
 @media screen and (min-width: 30em) {
   header[role="banner"] {
     position: relative;
     margin: 0 auto;
-    text-align: center; } }
+    text-align: center; }
+
+  .main .row .accordion section {
+    width: 2.813em;
+    /* 45px (originally 45px) / 750px */
+    min-width: 2.813em; }
+    .main .row .accordion section:target {
+      margin-left: 0;
+      width: 25em; }
+      .main .row .accordion section:target h2 {
+        text-indent: 1px;
+        height: auto; }
+      .main .row .accordion section:target:nth-child(2), .main .row .accordion section:target:nth-child(3), .main .row .accordion section:target:nth-child(4), .main .row .accordion section:target:nth-child(5), .main .row .accordion section:target:nth-child(6), .main .row .accordion section:target:nth-child(7), .main .row .accordion section:target:nth-child(8) {
+        margin-left: 0; } }
 /* ==========================================================================
 /*Small devices (tablets,  48em;//768px and down) */
 /* ========================================================================== */

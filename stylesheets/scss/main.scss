@@ -560,7 +560,8 @@ aside {
   text-transform: uppercase;
   font-size: 1.4em;
   letter-spacing: -.08em;
-  margin-top: -15px;
+  margin-top: -19px;
+  margin-bottom: 0;
   color: $bluedeep;
 }
 .tooltip {
@@ -614,6 +615,19 @@ div[role="main"] {
 /*method 2 trying using hover(to remove page jump on :target) instead and helping touch devices */
 .touch .mobile-link {display:block;}
 .no-touch .mobile-link {display:none}
+.button , .button a,a:active, a:focus {
+  display: inline-block;
+  margin: -12px 0 ;
+  cursor: pointer;
+  color: $bluedeep;
+  text-decoration: none;
+  text-transform: uppercase;
+  @include rounded(18);
+  @include transition(all, ease, 0.5s, 0s);
+    &:focus, &:hover, &:active {
+      color: $bluemedium;
+  }
+}
 
 .main {
   margin: 0 auto;
@@ -626,7 +640,7 @@ div[role="main"] {
       border: 5px solid $bluedeep;
       border-radius: 25px 0 25px 0;
       margin: 0;
-      max-height: 500px;
+     /* max-height: 500px;*/
      /* min-width: 46.875em;*/
       min-width: 46.875em;
       &.horizontal {
@@ -634,7 +648,6 @@ div[role="main"] {
         max-width: 46.875em; /*750px* will be  our default for horizontal*/
         height: 100%;
         overflow: hidden;
-
       }
       &.vertical {}
       section {
@@ -656,12 +669,12 @@ div[role="main"] {
              a, a:active, a:focus {
               display: none;
               cursor: pointer;
-              color: red;
+              color: $jade;
               font-size: 2em;
               text-decoration: none;
               @include transition(all, ease, 0.5s, 0s);
-              &:focus {
-                color:blue;
+              &:focus, &:hover, &:active {
+                color: $bluedeep;
             }
           }
 
@@ -750,7 +763,7 @@ div[role="main"] {
         }
         &:nth-child(1):after {
           content:"1";
-           overflow:visible !important;
+          overflow:visible !important;
         }
         &:nth-child(2):after {
           content:"2";
@@ -783,20 +796,51 @@ div[role="main"] {
           position: relative;
           background: $white;
           display: block;
+          left: 0;
+          margin-left: -4em;
           border-left: 4px solid $bluedeep;
           border-right: 4px solid $bluedeep;
           z-index:100;
-          width: 25em;
+          width: 16em;
           @include clearfix;
           @include transition(all, ease, 0.5s, 0.1s);
           .button {
             display: block;
-            a, a:active, a:focus{
+            z-index: 500;
+            background: transparent;
+            text-shadow:-1px -1px 0 $white, 1px -1px 0 $white, -1px 1px 0 $white, 1px 1px 0 $white;
+              a, a:active, a:focus {
                 display: block;
-            }
+                padding: 0;
+                background: inherit;
+                color: $bluedeep;
+              }
           }
-          &:first-child {
+         
+          &:nth-child(1) {
             border-left: none;
+            margin-left: 0;
+          }
+          &:nth-child(2) {
+            margin-left: -2em;
+          }
+          &:nth-child(3) {
+            margin-left: -5em;
+          }
+          &:nth-child(4) {
+            margin-left: -8em;
+          }
+          &:nth-child(5) {
+            margin-left: -11em;
+          }
+          &:nth-child(6) {
+            margin-left: -14em;
+          }
+          &:nth-child(7) {
+            margin-left: -15em;
+          }
+          &:nth-child(8) {
+            margin-left: -14em;
           }
           h2 {
             display: block;
@@ -805,7 +849,10 @@ div[role="main"] {
             text-align: center;
             letter-spacing: -.05em;
             margin:-5px 0 0 0;
+            text-indent: -9999px;
+            height: 1%;
             @include rotate(0deg);
+            @include transition(all, ease, 0.5s, 0s);
             width: 100%;
             z-index: 200;
             text-shadow:-1px -1px 0 $white, 1px -1px 0 $white, -1px 1px 0 $white, 1px 1px 0 $white;
@@ -845,8 +892,7 @@ div[role="main"] {
             &:hover,
             &:focus {
              background: $yellow;
-             
-              
+  
             }
         }
       }
@@ -968,7 +1014,7 @@ div[role="main"] {
 
 /* Rows */
 .row {
-  padding-top: 1em;
+  padding-top: 0;
   padding-bottom: 1em;
 }
 /* ==========================================================================
@@ -979,7 +1025,8 @@ footer {
   position: relative;
   margin: 20px auto;
   width: 100%;
-   min-width: 47em;
+  float: left;
+  /*min-width: 47em;*/
   @include clearfix;
   nav {
     overflow: visible;
@@ -1090,7 +1137,7 @@ nter-text { text-align: center; }
 }
 
 /* ==========================================================================
-/*mobile landscape 30em;//480px  and down) */
+/*mobile landscape 30em;//480px 
 /* ========================================================================== */
 @media screen and (min-width: 30em) {
 
@@ -1099,6 +1146,36 @@ nter-text { text-align: center; }
   margin: 0 auto;
   text-align: center;
 }
+  .main {
+    .row {
+      .accordion {
+        section {
+          width: 2.813em; /* 45px (originally 45px) / 750px */
+          min-width: 2.813em;
+          &:target {
+            margin-left: 0;
+            width: 25em;
+              h2 {
+              text-indent: 1px;
+               height: auto;
+              }
+          &:nth-child(2), 
+          &:nth-child(3), 
+          &:nth-child(4), 
+          &:nth-child(5),
+          &:nth-child(6), 
+          &:nth-child(7), 
+          &:nth-child(8) {
+            margin-left: 0;
+          
+          }
+
+          }
+        }
+      }
+    }
+  }
+
 
 }
 
