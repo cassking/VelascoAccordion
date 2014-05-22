@@ -591,6 +591,16 @@ header[role="banner"] {
   margin: 0 auto;
   @include clearfix;
 }
+
+/*#header {
+  position:fixed;
+  top: 0;
+  left: 0;
+  margin:0;
+  background: $white;
+  bottom-border: 2px solid $bluedeep;
+  z-index: 500;
+}*/
 div[role="main"] {
   position: relative;
   margin: 0 auto;
@@ -655,9 +665,10 @@ div[role="main"] {
         float: left;
         overflow: hidden;
        /* height: 500px;*/
-        height: 648px;
-        width: 2.813em; /* 45px (originally 45px) / 750px */
-        min-width: 2.813em;
+        /*height: 648px;*/
+        height: 1200px;
+        width: 2.75em; /* 45px (originally 45px) / 750px */
+        min-width: 2.75em;
         margin: 0;
         padding:0;
 /*       cursor: pointer;
@@ -1152,6 +1163,7 @@ nter-text { text-align: center; }
         section {
           width: 2.813em; /* 45px (originally 45px) / 750px */
           min-width: 2.813em;
+          height: 950px;
           &:target {
             margin-left: 0;
             width: 25em;
@@ -1301,6 +1313,7 @@ body {
     .row {
       .accordion {
         section {
+          height: 850px;
           &:target {
             h2 {
               letter-spacing: 0.0015em;
