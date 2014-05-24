@@ -591,6 +591,9 @@ header[role="banner"] {
   margin: 0 auto;
   @include clearfix;
 }
+#main-container {
+    -webkit-transform: translateZ(0);
+}
 
 /*#header {
   position:fixed;

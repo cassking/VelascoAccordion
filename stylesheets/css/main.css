@@ -588,6 +588,9 @@ header[role="banner"] {
     *zoom: 1;
     clear: both; }
 
+#main-container {
+  -webkit-transform: translateZ(0); }
+
 /*#header {
   position:fixed;
   top: 0;
