@@ -3,6 +3,7 @@ Accordion CSS3 Experimental
 Cassandra King
 @ca55king
 cassandra.ramirez.king(at)gmail(dot)com
+
 [Demo] http://www.normavelasco.com/files/VelascoAccordion/index.html
 
 
